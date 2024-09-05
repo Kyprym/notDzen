@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+:root {
+  --iconColor: rgba(70, 70, 70, 0.746);
+  --borderSearchColor: rgb(251, 195, 92);
+  --SearchinpRadius: 10px 10px;
+  --iconColorMouseHover: rgba(70, 70, 70, 0.442);
+  --transition: 0.25s;
+  --headerBackgroundColor: rgba(128, 128, 128, 0.122);
+  --SearchinpHeight: 3em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.allLinks {
+  color: var(--iconColor);
+  transition: var(--transition);
+}
+
+.allLinks:hover {
+  cursor: pointer;
+  color: var(--iconColorMouseHover);
+  transition: var(--transition)
+}
+
+
+
+#homePageHeader {
+  position: static;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  width: 99%;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  box-shadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
+}
+
+#homePageHeader div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+#homePageHeaderLogo img {
+  height: 3em;
+}
+
+
+#homePageHeaderSearch {
+  margin-right: 0.5em;
+  font-size: 1.7em;
+}
+
+#homePageHeaderUserProfile img {
+  width: 2.2em;
+  height: 2.2em;
+  border: 0.2em solid var(--iconColor);
+  border-radius: 22px 22px;
+}
+
+#searchInpBlock {
+  position: relative;
+  margin-top: 0.5em;
+  flex-direction: row;
+  justify-content: space-between;
+  height: var(--SearchinpHeight);
+  border: 0.17em solid var(--borderSearchColor);
+  border-radius: var(--SearchinpRadius);
+  z-index: 2;
+  transition: var(--transition);
+  background-color: white;
+}
+
+#searchInpBlockInput {
+  border: none;
+  outline: none;
+  width: 80%;
+  background-color: transparent;
+  font-size: 1.8em;
+  border-radius: var(--SearchinpRadius);
+
+}
+
+#searchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.4em;
+  font-weight: 300;
+  margin: 0.1em;
+  margin-right: 0.1em;
+  padding: 0.25em 0.3em 0.25em 0.3em;
+  border-radius: 8px 8px;
+  background-color: var(--borderSearchColor);
+}
+
+#searchButton:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.4em;
+  font-weight: 300;
+  margin: 0.1em;
+  margin-right: 0.1em;
+  padding: 0.25em 0.3em 0.25em 0.3em;
+  border-radius: 8px 8px;
+  background-color: rgb(249, 182, 57);
+}
+
+
+
+.searchBlockSetting {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#faKeyboard {
+  margin-right: 1em;
+  font-size: 2em;
+}
+
+#complateHeaderSearchPannel {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  background-color: var(--headerBackgroundColor);
+}
+
+#globalInformation {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+#temp {
+  margin-left: 0.5em;
+  color: black;
+  transition: var(--transition);
+}
+
+#temp:hover {
+  margin-left: 0.5em;
+  color: var(--iconColorMouseHover);
+  transition: var(--transition);
+}
+
+#moon_sun {
+  color: var(--borderSearchColor);
+}
+
+#city {
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 2em;
+}
+
+#windowShadowCityList {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.469);
+}
+
+
+#cityListComponent {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
+  border-radius: var(--SearchinpRadius);
+  z-index: 5;
+  color: var(--iconColor);
+  padding: 0.1em;
+  background-color: white
+}
+
+#cityListComponent div {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding: 0.2em;
+  border-radius: var(--SearchinpRadius);
+}
+
+#cityListComponent p {
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#cityListComponent hr {
+  background-color: black;
+  height: 3px;
+  width: 90%;
+
+
+}
+
+#cityListComponent div:hover {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: black;
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding: 0.2em;
+  border-radius: var(--SearchinpRadius);
+}
+
+#money {
+  display: flex;
+  flex-direction: row;
+
+}
+
+#USD,
+#EUR,
+#gas {
+  padding: 0.3em;
+}
+
+#donloadYABrowser a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 50;
+  color: black;
+  margin-left: 1em;
+  transition: var(--transition);
+
+}
+
+#donloadYABrowser:hover a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgba(255, 0, 0, 0.756);
+  margin-left: 1em;
+  transition: var(--transition);
+}
+
+#rightGlobalInf {
+  display: flex;
+  flex-direction: row;
+}
+
+#HeadSearchAndGlobalInfo {
+  grid-area: 1/2/1/2;
+  width: 60em;
+}
+
+#advertising {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-area: 2/2/2/2;
+  width: 60em;
+  margin: 1em;
+}
+
+#advertising div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49%;
+  border-radius: var(--SearchinpRadius);
+  height: 7em;
+  background-color: rgba(127, 255, 212, 0.438);
+}
+
+#shadowWindow {
+  position: absolute;
+  display: grid;
+  z-index: 2;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.251);
+}
+
+
+
+#searchHistoryComponent {
+  grid-area: 1/2/1/2;
+  background-color: white;
+  padding-top: 4em;
+  border-radius: var(--SearchinpRadius);
+  width: 61em;
+  height: 35em;
+  transition: var(--transition);
+}
+
+.elemSearchHistoryComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 98%;
+  margin: 0.3em 0.3em 0.3em 0.3em;
+  font-size: 1.5em;
+  border-radius: var(--SearchinpRadius);
+  padding: 0.2em;
+  transition: var(--transition);
+}
+
+.elemSearchHistoryComponent:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 98%;
+  margin: 0.3em 0.3em 0.3em 0.3em;
+  font-size: 1.5em;
+  background-color: rgba(251, 195, 92, 0.908);
+  border-radius: var(--SearchinpRadius);
+  padding: 0.2em;
+  transition: var(--transition);
+}
+
+.elemSearchHistoryComponent span {
+  margin-left: 0.25em;
+}
+
+.serachElemText:hover {
+  color: black;
+}
+
+.faClose:hover {
+  color: black;
+}
+
+#hotbar {
+  display: flex;
+  flex-direction: column;
+  width: 9em;
+}
+
+#hotbar hr {
+  height: 2px;
+  width: 95%;
+}
+
+#hotbar .allLinks {
+  width: 9em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+  font-size: 1.1em;
+  color: black;
+  border-radius: var(--SearchinpRadius);
+  margin-top: 0.1em;
+}
+
+#hotbar .allLinks:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+  font-size: 1.1em;
+  color: black;
+  border-radius: var(--SearchinpRadius);
+  margin-top: 0.1em;
+  background-color: var(--iconColorMouseHover);
+}
+
+.textHotbarComponent {
+  margin-left: 0.5em;
+}
+
+.hotbarButtomElement {
+  cursor: pointer;
+  margin-bottom: 0.4em;
+  margin-left: 0.6em;
+}
+
+.hotbarButtomElement a {
+  color: var(--iconColor);
+  font-size: 0.8em;
+}
+
+.hotbarButtomElement span,
+a:hover {
+  color: rgba(0, 0, 0, 0.758);
+}
