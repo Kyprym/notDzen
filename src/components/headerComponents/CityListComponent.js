@@ -1,41 +1,36 @@
-import { useContext } from "react"
-import { GlobalContextStore } from "../globalContextStore"
-import { cityList } from "../../modules/getGlobalInfo"
-import ElemCityListComponent from "./elemCityListComponent"
-import { nanoid } from "nanoid"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useCityActions } from "../../store/actions/cityListActions"
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 
 function CityListComponent() {
-    const [state, setState] = useContext(GlobalContextStore)
-
-    function closeCityListWindow() {
-        setState(false)
-    }
-
-
-    return <>
-        {state ?
-            <div id="windowShadowCityList" onClick={() => {
-                setState(false)
-            }}>
-                <div id="cityListComponent"
-                    className="allLinks"
-                    onClick={() => {
-                        setState(false)
-                    }}
-                >
-                    <p>Выберите город</p>
-                    <hr />
-                    {cityList.map((city) => {
-                        return <ElemCityListComponent
-                            city={city.ru}
-                            key={nanoid()}
-                            closeWindow={closeCityListWindow}
-                        />
-                    })}
-                </div>
-            </div> : ""
+    const { hideCityList } = useCityActions()
+    return <div id="cityListBoxShaow" onClick={(e) => {
+        if (e.target.id === "cityListBoxShaow") {
+            hideCityList()
         }
-    </>
-}
 
+    }}>
+        <div>
+
+            <div id="cityListComponent">
+                <div>
+                    <div id="ctyListText">
+                        Укажите ваш город — и мы покажем актуальные новости и погоду
+                    </div>
+                    <FontAwesomeIcon icon={faCircleXmark} id="faXmark" className="allLinks" onClick={hideCityList} />
+                </div>
+                <div className="allLinks"
+                    id="cityListUpButton">
+                    Определить автоматически
+                </div>
+                <div
+                    className="allLinks"
+                    id="cityListBottomButton"
+                >
+                    Указать вручную
+                </div>
+            </div>
+        </div>
+    </div>
+}
 export default CityListComponent

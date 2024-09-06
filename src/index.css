@@ -121,8 +121,6 @@ a {
   background-color: rgb(249, 182, 57);
 }
 
-
-
 .searchBlockSetting {
   display: flex;
   flex-direction: row;
@@ -130,7 +128,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 
 #faKeyboard {
   margin-right: 1em;
@@ -177,71 +174,80 @@ a {
   margin-left: 2em;
 }
 
-#windowShadowCityList {
+#cityListBoxShaow {
   position: absolute;
   display: flex;
+  z-index: 12;
   justify-content: center;
   align-items: center;
-  z-index: 12;
   width: 100%;
   height: 100%;
   background-color: rgba(128, 128, 128, 0.469);
 }
 
-
 #cityListComponent {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 26em;
+  height: 15em;
   box-shadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
-  border-radius: var(--SearchinpRadius);
+  border-radius: 18px 18px;
   z-index: 5;
   color: var(--iconColor);
-  padding: 0.1em;
   background-color: white
 }
 
 #cityListComponent div {
   display: flex;
   justify-content: center;
-  color: black;
-  font-size: 1.2em;
+  align-items: center;
+  width: 22em;
+  height: 3.5em;
+  font-size: 1em;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  padding: 0.2em;
-  border-radius: var(--SearchinpRadius);
+  border-radius: 18px 18px;
 }
 
-#cityListComponent p {
+#ctyListText {
+  font-size: 1.3em;
   color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.5em;
-  font-weight: 600;
 }
 
-#cityListComponent hr {
-  background-color: black;
-  height: 3px;
-  width: 90%;
-
-
+#faXmark {
+  color: rgba(0, 0, 0, 0.767);
+  font-size: 1.7em;
 }
 
-#cityListComponent div:hover {
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: black;
-  font-size: 1.2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  padding: 0.2em;
-  border-radius: var(--SearchinpRadius);
+#faXmark:hover {
+  color: rgba(0, 0, 0, 0.617);
+}
+
+#cityListUpButton {
+  margin-top: 0.5em;
+  background-color: rgba(0, 0, 0, 0.889);
+  color: rgb(255, 255, 255);
+}
+
+#cityListUpButton:hover {
+  background-color: rgba(0, 0, 0, 0.793);
+}
+
+#cityListBottomButton {
+  margin-top: 1em;
+  background-color: rgba(0, 0, 0, 0.206);
+  color: rgba(0, 0, 0, 0.839);
+}
+
+#cityListBottomButton:hover {
+  background-color: rgba(0, 0, 0, 0.122);
 }
 
 #money {
   display: flex;
   flex-direction: row;
-
 }
 
 #USD,
@@ -256,7 +262,6 @@ a {
   color: black;
   margin-left: 1em;
   transition: var(--transition);
-
 }
 
 #donloadYABrowser:hover a {

@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDollar, faDownload, faDroplet, faEuro, faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import { getTime, getTemp, getMoney, getGas, city } from "../../modules/getGlobalInfo"
-import { useContext } from "react"
-import { GlobalContextStore } from "../globalContextStore"
+import { useEffect } from "react"
+import { useCityActions } from "../../store/actions/cityListActions"
+
 
 
 const moon = <FontAwesomeIcon icon={faMoon} />
@@ -10,15 +11,24 @@ const sun = <FontAwesomeIcon icon={faSun} />
 
 let time = getTime()
 
-getTemp(city)
-getMoney()
-getGas()
+
+
+
+
 function GlobalInformation({ textDownBrow }) {
-    const [cityWindowState, setCityWindowState] = useContext(GlobalContextStore)
+
+    useEffect(() => {
+        getTemp(city)
+        getMoney()
+        getGas()
+    }, [])
+
+    const { showCityList } = useCityActions();
+
+
 
     return <>
-        <div id="globalInformation" >
-
+        <div id="globalInformation">
             <div>
                 <a href="https://yandex.ru/pogoda" id="moon_sun" className="allLinks">
                     {(time > 8 && time < 20) ? sun : moon}
@@ -26,9 +36,8 @@ function GlobalInformation({ textDownBrow }) {
                 </a>
                 <span id="city"
                     className="allLinks"
-                    onClick={() => {
-                        setCityWindowState(true)
-                    }}>
+                    onClick={showCityList}
+                >
                     {city}
                 </span>
             </div>
