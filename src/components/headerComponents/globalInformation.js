@@ -25,8 +25,6 @@ function GlobalInformation({ textDownBrow }) {
 
     const { showCityList } = useCityActions();
 
-
-
     return <>
         <div id="globalInformation">
             <div>
@@ -41,7 +39,6 @@ function GlobalInformation({ textDownBrow }) {
                     {city}
                 </span>
             </div>
-
 
             <div id="rightGlobalInf">
                 <a id="money" href="https://yandex.ru/yandexapp/ru/voiceassistant/exchange-rates/" >

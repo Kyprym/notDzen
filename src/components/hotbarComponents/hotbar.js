@@ -3,10 +3,12 @@ import { HotbarComponent } from "./hotbarComponent"
 import { nanoid } from "nanoid"
 import { HotbarButtomElement } from "./hotbarButtomElement"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
-
+import MoreLinksComponent from "./moreLinksComponent"
+import { useMoreInfAction } from "../../store/actions/moreInfAction"
+import { useSelector } from "react-redux"
 
 function Hotbar() {
+    const { showMoreInfWindow } = useMoreInfAction()
     const hotbarElemetsUp = [
         { text: "Главная", link: "https://dzen.ru/", icon: faHome },
         { text: "Подписки", link: "https://dzen.ru/subscriptions-manager", icon: faSquareCheck },
@@ -25,6 +27,8 @@ function Hotbar() {
         { text: "Всё о Дзене", link: "https://dzen.ru/" },
         { text: "Вакансии", link: "https://dzen.ru/subscriptions-manager" }
     ]
+
+    const moreInfState = useSelector(state => state.moreInfState)
 
     return <div id="hotbar">
         {hotbarElemetsUp.map((elem) => {
@@ -60,8 +64,13 @@ function Hotbar() {
             </a>
         </div>
         <div className="hotbarButtomElement">
-            <span>Ещё <FontAwesomeIcon icon={faChevronDown} /></span>
+            <span
+                onClick={() => {
+                    showMoreInfWindow()
+                }}
+            >Ещё <FontAwesomeIcon icon={faChevronDown} /></span>
         </div>
+        {moreInfState ? <MoreLinksComponent /> : ""}
     </div>
 }
 

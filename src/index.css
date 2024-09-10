@@ -12,6 +12,7 @@
   --transition: 0.25s;
   --headerBackgroundColor: rgba(128, 128, 128, 0.122);
   --SearchinpHeight: 3em;
+  --boxShadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
 }
 
 a {
@@ -42,7 +43,7 @@ a {
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
   align-items: center;
-  box-shadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
+  box-shadow: var(--boxShadow)
 }
 
 #homePageHeader div {
@@ -174,6 +175,48 @@ a {
   margin-left: 2em;
 }
 
+.cityListElem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  font-size: 1.3em;
+  color: black;
+  padding: 0.3em;
+  background-color: rgba(128, 128, 128, 0.587);
+  width: 15em;
+  border-radius: 15px 15px;
+}
+
+.cityListElem:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  font-size: 1.3em;
+  color: black;
+  padding: 0.3em;
+  background-color: rgba(128, 128, 128, 0.296);
+  width: 15em;
+  border-radius: 15px 15px;
+}
+
+#cityListSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 27em;
+  padding: 1em;
+  border-radius: var(--SearchinpRadius);
+  background-color: white;
+}
+
+#cityListSpaceHeader {
+  color: black;
+  font-size: 2em;
+}
+
 #cityListBoxShaow {
   position: absolute;
   display: flex;
@@ -185,21 +228,21 @@ a {
   background-color: rgba(128, 128, 128, 0.469);
 }
 
-#cityListComponent {
+.cityListComponent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 26em;
   height: 15em;
-  box-shadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
+  box-shadow: var(--boxShadow);
   border-radius: 18px 18px;
   z-index: 5;
   color: var(--iconColor);
   background-color: white
 }
 
-#cityListComponent div {
+.cityListComponent div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,9 +254,22 @@ a {
   border-radius: 18px 18px;
 }
 
-#ctyListText {
+.ctyListText {
+  font-size: 1.1em;
+  color: black;
+}
+
+#ctyListTextAutoWindow {
   font-size: 1.3em;
   color: black;
+}
+
+#ctyListTextAutoWindowText {
+  color: black;
+}
+
+.ctyListTextAutoWindowHeader {
+  margin-bottom: 0.5em;
 }
 
 #faXmark {
@@ -232,17 +288,34 @@ a {
 }
 
 #cityListUpButton:hover {
-  background-color: rgba(0, 0, 0, 0.793);
+  background-color: rgba(0, 0, 0, 0.66);
 }
 
-#cityListBottomButton {
+.cityListBottomButton {
   margin-top: 1em;
   background-color: rgba(0, 0, 0, 0.206);
   color: rgba(0, 0, 0, 0.839);
 }
 
-#cityListBottomButton:hover {
+.cityListBottomButton:hover {
+  color: rgba(0, 0, 0, 0.839);
   background-color: rgba(0, 0, 0, 0.122);
+
+}
+
+#cityListBlock {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 26em;
+  height: 15em;
+  box-shadow: var(--boxShadow);
+  border-radius: 18px 18px;
+  z-index: 6;
+  color: var(--iconColor);
+  background-color: white
 }
 
 #money {
@@ -408,4 +481,33 @@ a {
 .hotbarButtomElement span,
 a:hover {
   color: rgba(0, 0, 0, 0.758);
+}
+
+#moreLinksComponent {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 24em;
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  border-radius: var(--SearchinpRadius);
+  padding: 0.5em 1em 0.5em 1em;
+  width: 21em;
+  background-color: white;
+  box-shadow: var(--boxShadow);
+}
+
+#moreLinksComponent a {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: var(--SearchinpRadius);
+  font-size: 1.2em;
+}
+
+#moreLinksComponent a:hover {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: var(--SearchinpRadius);
+  font-size: 1.2em;
+  background-color: rgba(128, 128, 128, 0.495);
 }

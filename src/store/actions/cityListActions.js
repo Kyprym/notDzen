@@ -1,15 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const useCityActions = () => {
     const dispatch = useDispatch();
-    const cityListState = useSelector(state => state.cityListState.state)
 
     const showCityList = () => {
         dispatch({
             type: "SHOW_CITY",
             payload: true
         });
-        console.log(cityListState)
     };
 
     const hideCityList = () => {

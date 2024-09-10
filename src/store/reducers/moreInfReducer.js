@@ -1,13 +1,11 @@
 const defaultState = false
-
-export const cityListReducer = (state = defaultState, action) => {
+export const moreInfReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case "SHOW_CITY":
+        case "SHOW_MOREINF":
             return true
-        case "CLOSE_CITY":
+        case "HIDE_MOREINF":
             return false
         default:
             return state
-
     }
 }

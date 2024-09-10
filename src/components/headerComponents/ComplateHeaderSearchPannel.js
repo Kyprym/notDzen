@@ -3,16 +3,22 @@ import HeadSearchPannel from "./headSearchPannel";
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import SearchHistoryComponent from "./searchHistoryComponent";
 import { useState } from "react";
+import { useMoreInfAction } from "../../store/actions/moreInfAction";
 
 function ComplateHeaderSearchPannel() {
     const [showSearch, setShowSearch] = useState(false);
+    const { hideMoreInfWindow } = useMoreInfAction()
+
     function closeShawdowWindow(e) {
         if (e.target.id === "shadowWindow") {
             setShowSearch(false)
         }
     }
 
-    return <div>
+
+    return <div
+        onClick={hideMoreInfWindow}
+    >
         <div id="complateHeaderSearchPannel">
             {showSearch ? <SearchHistoryComponent
                 closePannel={e => closeShawdowWindow(e)} /> : ''}
