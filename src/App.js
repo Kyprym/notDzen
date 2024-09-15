@@ -4,6 +4,7 @@ import ComplateHeaderSearchPannel from "./components/headerComponents/ComplateHe
 import Hotbar from "./components/hotbarComponents/hotbar";
 import CityListComponent from "./components/headerComponents/cityListComponent";
 import { useSelector } from "react-redux";
+import { NewsComponent } from "./components/newsComponents/newsComponent";
 
 
 
@@ -12,8 +13,10 @@ function App() {
   return <>
     {cityListState ? <CityListComponent /> : ""}
     <ComplateHeaderSearchPannel />
-
-    <Hotbar />
+    <div id="informationContentBlock">
+      <Hotbar />
+      <NewsComponent />
+    </div>
 
   </>
 }

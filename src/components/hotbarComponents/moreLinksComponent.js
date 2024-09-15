@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid"
 import { useMoreInfAction } from "../../store/actions/moreInfAction"
 
 
@@ -32,7 +33,7 @@ function MoreLinksComponent() {
             moreLinksArr.map(elem => {
                 return <a
                     href={elem.link}
-                    key={elem.name}
+                    key={nanoid(10)}
                     onClick={hideMoreInfWindow}
                 >
                     {elem.name}

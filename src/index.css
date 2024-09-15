@@ -13,6 +13,8 @@
   --headerBackgroundColor: rgba(128, 128, 128, 0.122);
   --SearchinpHeight: 3em;
   --boxShadow: 0px 6px 20px 1px rgba(125, 125, 125, 0.853);
+  --logoFontSize: 1.7em;
+  --LogoFontWeight: 600;
 }
 
 a {
@@ -32,7 +34,11 @@ a {
   transition: var(--transition)
 }
 
-
+.logo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--logoFontSize);
+  font-weight: var(--LogoFontWeight);
+}
 
 #homePageHeader {
   position: static;
@@ -432,6 +438,12 @@ a {
   color: black;
 }
 
+#informationContentBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
 #hotbar {
   display: flex;
   flex-direction: column;
@@ -510,4 +522,40 @@ a:hover {
   border-radius: var(--SearchinpRadius);
   font-size: 1.2em;
   background-color: rgba(128, 128, 128, 0.495);
+}
+
+
+#newsComponent {}
+
+#complateNewsHewaderComponent {
+  display: flex;
+  flex-direction: row;
+}
+
+#newsRuletteComponent {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  width: 30em;
+  border: 2px solid pink;
+}
+
+#newsRulletButtons {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease;
+}
+
+.newsRuletteElemComponent {
+  width: 6em;
+}
+
+.faChevron {
+  z-index: 2;
+  font-size: 1.5em;
+  padding: 0.5em;
+  background-color: aqua;
 }
