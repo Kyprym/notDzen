@@ -15,6 +15,7 @@ const cityList = [
 ]
 
 
+
 function getTime() {
     const date = new Date();
     let hours = date.getHours()

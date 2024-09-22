@@ -26,6 +26,10 @@ a {
 .allLinks {
   color: var(--iconColor);
   transition: var(--transition);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .allLinks:hover {
@@ -440,7 +444,6 @@ a {
 
 #informationContentBlock {
   display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 
@@ -448,6 +451,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 9em;
+  grid-area: left;
 }
 
 #hotbar hr {
@@ -525,37 +529,157 @@ a:hover {
 }
 
 
-#newsComponent {}
+
+#newsAndThemeBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0.5em;
+  grid-area: 1/2;
+}
 
 #complateNewsHewaderComponent {
   display: flex;
   flex-direction: row;
 }
 
-#newsRuletteComponent {
-  display: flex;
-  flex-direction: row;
-  width: 300px;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  width: 30em;
-  border: 2px solid pink;
-}
 
-#newsRulletButtons {
-  display: flex;
-  flex-direction: row;
-  transition: transform 0.5s ease;
-}
 
 .newsRuletteElemComponent {
   width: 6em;
 }
 
+#newsHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+
+#newsRulleteHeader {
+  overflow: hidden;
+  position: relative;
+  margin-left: 1em;
+  width: 40em;
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#newsRulette {
+  position: absolute;
+}
+
+.newsRuletteComponent {
+  padding: 0.4em;
+  border-radius: 7px;
+  font-size: 1em;
+  color: rgb(98, 94, 94);
+}
+
+.newsRuletteComponent:hover {
+  padding: 0.4em;
+  background-color: rgba(128, 128, 128, 0.189);
+  border-radius: 7px;
+  font-size: 1;
+  color: rgb(98, 94, 94);
+}
+
+
 .faChevron {
-  z-index: 2;
+  z-index: 1;
   font-size: 1.5em;
-  padding: 0.5em;
-  background-color: aqua;
+  padding: 0px 10px;
+  color: rgba(128, 128, 128, 0);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.931), rgba(255, 255, 255, 0.732));
+}
+
+.faChevron:hover {
+  z-index: 1;
+  font-size: 1.5em;
+  padding: 0px 10px;
+  color: var(--iconColor);
+}
+
+
+.themeComponentHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+}
+
+#themePicture {
+  position: relative;
+  border-radius: 25px 25px;
+  height: 12em;
+  width: 35em;
+  overflow: hidden;
+}
+
+#themePicture #imgThemeOnDzen {
+  height: 15em;
+  width: 43em;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  transition: 1s;
+}
+
+#themePicture:hover #imgThemeOnDzen {
+  z-index: -1;
+  transform: scale(1.1)
+}
+
+
+#themePicture #textInThemeAnimation {
+  color: aliceblue;
+  font-size: 6em;
+  z-index: 111;
+  position: absolute;
+  bottom: 35%;
+  left: 27%;
+  transition: var(--transition);
+}
+
+#themePicture:hover #textInThemeAnimation {
+  color: aliceblue;
+  font-size: 5em;
+  z-index: 111;
+  position: absolute;
+  bottom: 35%;
+  left: 30%;
+  transition: var(--transition);
+}
+
+#themeDownText {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  position: absolute;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom: 18%;
+  left: 32%
+}
+
+.moreContentButton {
+  color: black;
+  font-size: 1.5em;
+  padding: 0.3em;
+  border-radius: var(--SearchinpRadius);
+  background-color: var(--headerBackgroundColor);
+}
+
+
+
+.moreContentButton:hover {
+  font-size: 1.5em;
+  padding: 0.3em;
+  border-radius: var(--SearchinpRadius);
+  background-color: var(--iconColorMouseHover);
 }
