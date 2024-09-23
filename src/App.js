@@ -20,9 +20,11 @@ function App() {
       <span>
         <Hotbar />
       </span>
-      <div id="newsAndThemeBlock">
-        <News />
-        <Theme />
+      <div id="rootContentBlock">
+        <div id="newsAndThemeBlock">
+          <News />
+          <Theme />
+        </div>
         <Articles />
       </div>
 
