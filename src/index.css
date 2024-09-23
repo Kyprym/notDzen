@@ -675,11 +675,165 @@ a:hover {
   background-color: var(--headerBackgroundColor);
 }
 
-
-
 .moreContentButton:hover {
   font-size: 1.5em;
   padding: 0.3em;
   border-radius: var(--SearchinpRadius);
   background-color: var(--iconColorMouseHover);
+}
+
+#articlesContentBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 2em;
+  width: 100%;
+}
+
+#ArticlesComplateComponent {
+
+  background-color: aqua;
+}
+
+.article {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 15em;
+  width: 15em;
+  border: 2px solid var(--iconColor);
+  border-radius: 25px 25px;
+}
+
+.article:hover {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  height: 15em;
+  width: 15em;
+  border: 2px solid rgba(128, 128, 128, 0.792);
+  border-radius: 25px 25px;
+  box-shadow: var(--boxShadow);
+}
+
+
+.articleTop {
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+}
+
+.articleTop .artickleHeadImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article:hover .artickleHeadImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.1;
+  object-fit: cover;
+}
+
+.articleBottom {
+  border-radius: 0 0 25px 25px;
+  cursor: pointer;
+}
+
+.articleButtonsMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.3em 0.2em 0.3em;
+}
+
+
+.articleChannelInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.channelIcon {
+  width: 2em;
+  height: 2em;
+  border: 2px solid var(--iconColor);
+  border-radius: 25px;
+}
+
+.channelIcon:hover {
+  width: 2em;
+  height: 2em;
+  border: 2px solid var(--iconColorMouseHover);
+  border-radius: 25px;
+}
+
+.faEllipsis {
+  rotate: 90deg;
+  padding: 0.2em;
+  margin-top: 0.2em;
+}
+
+.articleChannelName {
+  margin-top: 0.1em;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.articleSubscribeButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5em;
+  height: 2.2em;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-top: 0.2em;
+  margin-left: 11.5em;
+  color: rgba(0, 0, 0, 0.752);
+  background-color: var(--iconColorMouseHover);
+  border-radius: var(--SearchinpRadius);
+}
+
+.articleSubscribeButton:hover {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5em;
+  height: 2.2em;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-top: 0.2em;
+  margin-left: 11.5em;
+
+  color: black;
+  background-color: var(--iconColor);
+  border-radius: var(--SearchinpRadius);
+}
+
+.articleHeaderText {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgb(31, 30, 30);
+  height: 2em;
+  margin-left: 0.4em;
+}
+
+.articleText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: var(--iconColor);
+  margin-left: 0.4em;
+  padding: 0.2em;
 }

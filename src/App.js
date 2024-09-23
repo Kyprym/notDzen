@@ -23,9 +23,11 @@ function App() {
       <div id="newsAndThemeBlock">
         <News />
         <Theme />
+        <Articles />
       </div>
-      <Articles />
+
     </div>
+
 
   </>
 }
