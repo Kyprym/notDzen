@@ -14,7 +14,19 @@ const cityList = [
     { ru: "Воронеж", en: "Voronezh" },
 ]
 
-
+const searchHistoryArr = [
+    { text: "в чем секрет кота бориса", link: 'https://dzen.ru/' },
+    { text: "уроки по рекакт для чайников памагити", link: 'https://dzen.ru/' },
+    { text: "уроки по рекакт для приматов с картинками и видео много идео", link: 'https://dzen.ru/' },
+    { text: "что будет, если собрать атомный реактор в гараже, фото в цвете", link: 'https://dzen.ru/' },
+    { text: "заходит как то сталкер в бар и прячет консервные банки от сидоровича", link: 'https://dzen.ru/' },
+    { text: "очередной тестовый запрос очередной тестовый запрос очередной тестовый запрос", link: 'https://dzen.ru/' },
+    { text: "Инструкция: как быстро найти пульт от телевизора", link: 'https://dzen.ru/' },
+    { text: "Сколько калорий сжигается при поиске зарядки для телефона?", link: 'https://dzen.ru/' },
+    { text: "Как перестать откладывать сон на потом... завтра?", link: 'https://dzen.ru/' },
+    { text: "Почему мой тост всегда падает маслом вниз, и как это предотвратить?", link: 'https://dzen.ru/' },
+    { text: "Почему коты смотрят на тебя, когда ты ешь?", link: 'https://dzen.ru/' },
+];
 
 function getTime() {
     const date = new Date();
@@ -68,4 +80,4 @@ function applyCity(e) {
     }
 }
 
-export { getTime, getTemp, getMoney, getGas, applyCity, city, cityList }
+export { getTime, getTemp, getMoney, getGas, applyCity, city, cityList, searchHistoryArr }

@@ -1,9 +1,15 @@
 import { faCompass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import themeImg from "../../img/themeImg.jpg"
+import { useMoreInfAction } from "../../store/actions/moreInfAction"
 
 export function Theme() {
-    return <div className="allLinks" id="themeOnDzen">
+    const { hideMoreInfWindow } = useMoreInfAction()
+
+    return <div
+        onClick={hideMoreInfWindow}
+        className="allLinks"
+        id="themeOnDzen">
         <div className="themeComponentHeader">
             <a href="theme.html">
                 <div className="logo">

@@ -6,7 +6,7 @@ import CityListComponent from "./components/headerComponents/cityListComponent";
 import { useSelector } from "react-redux";
 import { News } from "./components/newsComponents/News";
 import { Theme } from "./components/themeComponents.js/Theme";
-import { Articles } from "./articles/articles";
+import { Articles } from "./components/articles/articles";
 
 
 

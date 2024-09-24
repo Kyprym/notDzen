@@ -1,13 +1,13 @@
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
-export function AaricleComponent({ channelName, channelIcon, headerText, articleText, img, key }) {
+export function AaricleComponent({ channelName, channelIcon, headerText, articleText, img, num }) {
     const [subsBtnState, setSubsBtrnState] = useState(false)
-
-    const channelNameLength = 15
-    const headerTextLngth = 48
-    const articleTextLength = 104
+    const [subscribe, setSubscribe] = useState(false)
+    const channelNameLength = 23
+    const headerTextLngth = 60
+    const articleTextLength = 204
     const textCollector = (arr, length) => {
         let finalText = ""
         for (let i = 0; i < length; i++) {
@@ -31,7 +31,7 @@ export function AaricleComponent({ channelName, channelIcon, headerText, article
         className="article"
         onMouseMove={() => { setSubsBtrnState(true) }}
         onMouseLeave={() => { setSubsBtrnState(false) }}
-        key={key}>
+        key={num}>
         <div className="articleTop">
             <img className="allLinks artickleHeadImg" src={img} alt={articleText} />
         </div>
@@ -47,8 +47,13 @@ export function AaricleComponent({ channelName, channelIcon, headerText, article
                         {abbrAticleText(channelName, channelNameLength)}
                     </div>
                 </div>
-                {subsBtnState ? <div className="articleSubscribeButton allLinks">
-                    Подписаться
+                {subsBtnState ? <div
+                    className="articleSubscribeButton allLinks"
+                    onClick={() => {
+                        setSubscribe(!subscribe)
+                    }}
+                >
+                    {!subscribe ? "Подписаться" : <FontAwesomeIcon className="faCheck" icon={faCheck} />}
                 </div> : <></>}
                 <FontAwesomeIcon className="faEllipsis allLinks" icon={faEllipsis} />
             </div>

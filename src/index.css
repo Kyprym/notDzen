@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 
@@ -26,10 +30,7 @@ a {
 .allLinks {
   color: var(--iconColor);
   transition: var(--transition);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
 }
 
 .allLinks:hover {
@@ -371,6 +372,7 @@ a {
   grid-area: 2/2/2/2;
   width: 60em;
   margin: 1em;
+  overflow: hidden;
 }
 
 #advertising div {
@@ -484,6 +486,7 @@ a {
 }
 
 .hotbarButtomElement {
+  display: block;
   cursor: pointer;
   margin-bottom: 0.4em;
   margin-left: 0.6em;
@@ -691,9 +694,9 @@ a:hover {
 
 #articlesContentBlock {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
-  gap: 2em;
+  row-gap: 1em;
   width: 100%;
 }
 
@@ -713,8 +716,8 @@ a:hover {
   display: grid;
   grid-template-rows: 50% 50%;
   font-family: Arial, Helvetica, sans-serif;
-  height: 15em;
-  width: 15em;
+  height: 20em;
+  width: 20em;
   border: 2px solid var(--iconColor);
   border-radius: 25px 25px;
 }
@@ -722,8 +725,8 @@ a:hover {
 .article:hover {
   display: grid;
   grid-template-rows: 50% 50%;
-  height: 15em;
-  width: 15em;
+  height: 20em;
+  width: 20em;
   border: 2px solid rgba(128, 128, 128, 0.792);
   border-radius: 25px 25px;
   box-shadow: var(--boxShadow);
@@ -761,7 +764,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.3em 0.2em 0.3em;
+  padding: 0.5em 0.3em 0.7em;
 }
 
 
@@ -802,12 +805,11 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7.5em;
-  height: 2.2em;
+  width: 9em;
+  height: 3.2em;
   font-size: 0.7em;
   font-weight: bold;
-  margin-top: 0.2em;
-  margin-left: 11.5em;
+  margin-left: 16.5em;
   color: rgba(0, 0, 0, 0.752);
   background-color: var(--iconColorMouseHover);
   border-radius: var(--SearchinpRadius);
@@ -818,13 +820,11 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7.5em;
-  height: 2.2em;
+  width: 9em;
+  height: 3.2em;
   font-size: 0.7em;
   font-weight: bold;
-  margin-top: 0.2em;
-  margin-left: 11.5em;
-
+  margin-left: 16.5em;
   color: black;
   background-color: var(--iconColor);
   border-radius: var(--SearchinpRadius);
@@ -850,4 +850,98 @@ a:hover {
   color: var(--iconColor);
   margin-left: 0.4em;
   padding: 0.2em;
+}
+
+.faCheck {
+  color: aliceblue;
+  font-size: 1.5em;
+}
+
+.articleSettingComponent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15em;
+  width: 15em;
+  border-radius: var(--SearchinpRadius);
+  background-color: aqua;
+}
+
+.articleSettingComponent div {
+  font-size: 1.3em;
+  padding: 0.3em;
+}
+
+.advertisingContainer {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.advertisingContainer img {
+  margin-top: 50px;
+  width: 500px;
+}
+
+
+
+@media (max-width: 1100px) {
+
+  #hotbar {
+    width: 3em;
+  }
+
+  .textHotbarComponent {
+    display: none;
+  }
+
+  #themeOnDzen {
+    display: none;
+  }
+
+  #headSearchPannel {
+    width: 100%;
+  }
+
+  #complateHeaderSearchPannel {
+    width: 100%;
+  }
+
+  #articlesContentBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 1em;
+    width: 100%;
+  }
+}
+
+@media (max-width: 976px) {
+
+  #hotbar {
+    width: 3em;
+  }
+
+  .textHotbarComponent {
+    display: none;
+  }
+
+  #themeOnDzen {
+    display: none;
+  }
+
+  #headSearchPannel {
+    width: 100%;
+  }
+
+  #complateHeaderSearchPannel {
+    width: 100%;
+  }
+
+  #articlesContentBlock {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 1em;
+    width: 100%;
+  }
 }

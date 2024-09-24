@@ -5,6 +5,9 @@ import SearchHistoryComponent from "./searchHistoryComponent";
 import { useState } from "react";
 import { useMoreInfAction } from "../../store/actions/moreInfAction";
 
+import advert_1 from "../../img/advertising/advertising_1.jpg"
+import advert_2 from "../../img/advertising/advertising_2.jpg"
+
 function ComplateHeaderSearchPannel() {
     const [showSearch, setShowSearch] = useState(false);
     const { hideMoreInfWindow } = useMoreInfAction()
@@ -34,8 +37,13 @@ function ComplateHeaderSearchPannel() {
                 />
             </div>
             <div id="advertising" >
-                <div className="allLinks">Реклама</div >
-                <div className="allLinks">Реклама_1</div>
+                <div className="allLinks advertisingContainer">
+                    <img src={advert_1} alt="advertising" />
+                </div >
+                <div className="allLinks advertisingContainer">
+                    <img src={advert_2} alt="advertising" />
+
+                </div>
             </div>
         </div>
     </div>

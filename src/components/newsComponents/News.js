@@ -5,6 +5,7 @@ import NewsList from "./newsList";
 import { useState } from "react";
 import { NewsHeaderComponent } from "./newsHeaderComponent";
 import { nanoid } from "nanoid";
+import { useMoreInfAction } from "../../store/actions/moreInfAction";
 
 
 
@@ -16,6 +17,8 @@ const newsArr = ["Главная", "Город", "Интересное", "Спо
 
 
 export function News() {
+    const { hideMoreInfWindow } = useMoreInfAction()
+
     const rightShift = -37
     const [rulleteSwypeState, setRulleteSwipeState] = useState(rightShift)
     function rulleteSwypeLeft() {
@@ -25,7 +28,11 @@ export function News() {
         setRulleteSwipeState(rulleteSwypeState + 10)
     }
 
-    return <div id="news" className="allLinks">
+    return <div
+        id="news"
+        className="allLinks"
+        onClick={hideMoreInfWindow}
+    >
         <div id="newsHeader">
 
             <NewsHeaderComponent />
