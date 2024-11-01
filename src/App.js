@@ -2,7 +2,7 @@
 
 import ComplateHeaderSearchPannel from "./components/headerComponents/ComplateHeaderSearchPannel"
 import Hotbar from "./components/hotbarComponents/hotbar";
-import CityListComponent from "./components/headerComponents/cityListComponent";
+import CityListComponent from "./components/headerComponents/CityListComponent";
 import { useSelector } from "react-redux";
 import { News } from "./components/newsComponents/News";
 import { Theme } from "./components/themeComponents.js/Theme";
